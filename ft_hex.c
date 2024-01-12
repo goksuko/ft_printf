@@ -6,7 +6,7 @@
 /*   By: akaya-oz <akaya-oz@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/17 20:26:18 by akaya-oz      #+#    #+#                 */
-/*   Updated: 2023/12/16 11:22:36 by akaya-oz      ########   odam.nl         */
+/*   Updated: 2024/01/12 10:39:40 by akaya-oz      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	print_hexadecimal(unsigned int hexa)
 	{
 		print_hexadecimal(hexa / 16);
 	}
-	total += write(1, &letters[hexa % 16], 1);
+	total += write(STDOUT_FD, &letters[hexa % 16], 1);
 	return (total);
 }
 
@@ -38,7 +38,7 @@ size_t	print_upp_hexadecimal(unsigned int hexa)
 	{
 		print_upp_hexadecimal(hexa / 16);
 	}
-	total += write(1, &letters[hexa % 16], 1);
+	total += write(STDOUT_FD, &letters[hexa % 16], 1);
 	return (total);
 }
 
@@ -53,7 +53,7 @@ size_t	pointer_helper(unsigned long int hexa)
 	{
 		pointer_helper(hexa / 16);
 	}
-	total += write(1, &letters[hexa % 16], 1);
+	total += write(STDOUT_FD, &letters[hexa % 16], 1);
 	return (total);
 }
 
